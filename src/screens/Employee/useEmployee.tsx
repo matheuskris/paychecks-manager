@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { Paycheck } from "../../components/TableAdmin";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectUser, selectUserInfo } from "../../store/userSlice/userSelector";
 import {
   getMyPaycheckFile,
@@ -9,10 +9,13 @@ import {
   editFirestoreDoc,
 } from "../../utils/firebaseStorage.utils";
 import { useRouter } from "next/router";
+import { logoutUser } from "../../store/userSlice/userSlicer";
 
 const useEmployee = () => {
   const userInfo = useSelector(selectUserInfo);
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [workerPaychecks, setWorkerPaychecks] = useState<Paycheck[]>([]);
@@ -51,7 +54,11 @@ const useEmployee = () => {
     } else {
       getData();
     }
-  }, []);
+  }, [userInfo]);
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+  };
 
   return [
     isLoading,
@@ -59,6 +66,8 @@ const useEmployee = () => {
     pdfUrl,
     setCurrentPaycheck,
     currentPaycheck,
+    handleLogout,
+    userInfo,
   ] as const;
 };
 

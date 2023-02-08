@@ -5,7 +5,6 @@ import nextConnect from "next-connect";
 
 import multer from "multer";
 import crypto from "crypto";
-import path from "path";
 
 const multerConfig = {
   storage: multer.diskStorage({
@@ -110,10 +109,6 @@ function parseToddPDF(pages) {
     // why we don't coerce to Number.
     data[key] = val;
   });
-
-  // Manually fixing up some text fields so theyre usable
-  // data.reqID = data.reqID.slice("Requsition ID: ".length);
-  // data.date = data.date.slice("Date: ".length);
 
   return data;
 }

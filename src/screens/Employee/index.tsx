@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import PaycheckCard from "../../components/paycheckCard";
 import useEmployee from "./useEmployee";
+import { userInfo } from "os";
 
 const Employee = () => {
   const [
@@ -13,6 +14,8 @@ const Employee = () => {
     pdfUrl,
     setCurrentPaycheck,
     currentPaycheck,
+    handleLogout,
+    userInfo,
   ] = useEmployee();
 
   return (
@@ -21,9 +24,13 @@ const Employee = () => {
         <div className="logo-cont">
           <Image src={"/employeee.png"} width={200} height={200} alt="logo" />
         </div>
+        <div>
+          <C.LogoutButton onClick={handleLogout}>Sair</C.LogoutButton>
+        </div>
       </C.HContainer>
       <C.BodyContainer>
         <C.CardsContainer>
+          <h1>Olá {userInfo?.name}</h1>
           <h1>Seus contracheques disponíveis:</h1>
           {isLoading && <Loading func={true} RH={false} />}
           {!isLoading &&

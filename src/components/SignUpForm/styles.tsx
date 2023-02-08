@@ -42,6 +42,7 @@ export const FormContainer = styled.div`
     margin-bottom: 32px;
     border: none;
     padding: 0 8px;
+    color: white;
 
     @media (min-width: 768px) {
       width: 500px;
@@ -49,7 +50,7 @@ export const FormContainer = styled.div`
   }
 
   input::placeholder {
-    color: #ffffff;
+    color: hsl(0, 0%, 80%);
     font-size: 14px;
   }
 

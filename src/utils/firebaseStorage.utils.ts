@@ -10,7 +10,6 @@ import {
   query,
   getDocs,
   addDoc,
-  QueryDocumentSnapshot,
   Timestamp,
 } from "firebase/firestore";
 import {
@@ -317,18 +316,18 @@ export type UserData = User & {
 };
 
 export const createUserDocumentFromAuth = async (
-  userAuth: User,
+  user: User,
   name: string,
   role: string,
   numberRegistration: string
 ): Promise<void | UserData> => {
-  if (!userAuth) return;
-  const userDocRef = doc(firestoreDB, "users", userAuth.uid);
+  if (!user) return;
+  const userDocRef = doc(firestoreDB, "users", user.uid);
 
   const userSnapshot = await getDoc(userDocRef);
   // pega as informações do google e joga no firebase:
   if (!userSnapshot.exists()) {
-    const { displayName, email } = userAuth;
+    const { displayName, email } = user;
     const createdAt = new Date();
 
     try {

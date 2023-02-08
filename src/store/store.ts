@@ -1,15 +1,7 @@
-import { combineReducers, configureStore, AsyncThunk } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
-import {
-  FLUSH,
-  PAUSE,
-  PERSIST,
-  persistReducer,
-  persistStore,
-  PURGE,
-  REGISTER,
-  REHYDRATE,
-} from "redux-persist";
+import { persistReducer, persistStore } from "redux-persist";
+import logger from "redux-logger";
 
 import userReducer from "./userSlice/userSlicer";
 import holeritsReducer from "./holeritsSlice/holeritsSlicer";
@@ -38,7 +30,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }),
+    }).concat(logger),
 });
 
 export const persistor = persistStore(store);

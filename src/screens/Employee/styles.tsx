@@ -13,9 +13,9 @@ export const HContainer = styled.div`
   background-color: ${colors.mainColor};
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  padding: 8px 40px;
   overflow: hidden;
 
   .logo-cont {
@@ -40,6 +40,24 @@ export const HContainer = styled.div`
     padding: 7px 8px;
     filter: drop-shadow(0 2px 1px rgb(0 0 0 / 1))
       drop-shadow(0 2px 1px rgb(0 0 0 / 1));
+  }
+`;
+
+export const LogoutButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 4px 8px;
+
+  font-size: 18px;
+
+  &:hover {
+    background-color: hsl(0, 0%, 90%);
+    cursor: pointer;
   }
 `;
 

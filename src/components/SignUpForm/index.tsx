@@ -42,7 +42,7 @@ function SignUpForm() {
       if (userCredential) {
         const { user } = userCredential;
         await createUserDocumentFromAuth(
-          userCredential.user,
+          user,
           credential.name,
           "worker",
           credential.numberId
@@ -52,7 +52,7 @@ function SignUpForm() {
           setUserInfo({
             name: credential.name,
             numberRegistration: credential.numberId,
-            role: "worker",
+            role: "admin",
           })
         );
         router.push("/admin");
@@ -85,7 +85,6 @@ function SignUpForm() {
           />
           <input
             placeholder="Numero do cadastro"
-            required
             type="number"
             name="numberId"
             value={credential.numberId}

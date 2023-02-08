@@ -10,7 +10,7 @@ type UserInfo = {
 
 export type UserState = {
   user: User | null;
-  userInfo: UserInfo;
+  userInfo: UserInfo | null;
 };
 
 const initialState: UserState = {
@@ -28,6 +28,10 @@ export const userSlice = createSlice({
     setUserInfo(state, action: PayloadAction<UserInfo>) {
       state.userInfo = action.payload;
     },
+    logoutUser(state) {
+      state.user = null;
+      state.userInfo = null;
+    },
   },
   extraReducers: {
     [HYDRATE]: (state, action) => {
@@ -39,6 +43,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUser, setUserInfo } = userSlice.actions;
+export const { setUser, setUserInfo, logoutUser } = userSlice.actions;
 
 export default userSlice.reducer;
