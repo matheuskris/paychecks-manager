@@ -1,0 +1,45 @@
+{
+  "name": "paychecks-manager",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "resolutions": {
+    "styled-components": "5"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@types/redux-logger": "^3.0.9",
+    "@types/styled-components": "^5.1.26",
+    "axios": "^1.2.1",
+    "crypto-js": "^4.1.1",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "firebase": "^9.14.0",
+    "multer": "^1.4.5-lts.1",
+    "next": "13.0.5",
+    "next-connect": "^0.13.0",
+    "next-redux-wrapper": "^8.0.0",
+    "pdfreader": "^3.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "styled-components": "^5.3.6",
+    "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.44.0",
+    "@typescript-eslint/parser": "5.44.0",
+    "eslint-plugin-react": "7.31.11"
+  }
+}
