@@ -1,6 +1,7 @@
 import React from "react";
 import * as C from "./styles";
 import Loading from "../../components/Loading/Loading";
+import Image from "next/image";
 
 import PaycheckCard from "../../components/paycheckCard";
 import useEmployee from "./useEmployee";
@@ -15,9 +16,11 @@ const Employee = () => {
   ] = useEmployee();
 
   return (
-    <>
+    <C.EmployeeContainer>
       <C.HContainer>
-        <h1>Portal Humana</h1>
+        <div className="logo-cont">
+          <Image src={"/employeee.png"} width={200} height={200} alt="logo" />
+        </div>
       </C.HContainer>
       <C.BodyContainer>
         <C.CardsContainer>
@@ -47,9 +50,15 @@ const Employee = () => {
           )}
         </C.PdfContainer>
 
-        <img className="img" src="Vectors.png" alt="" />
+        <Image
+          width={1490}
+          height={90}
+          className="img"
+          src="/Vectors.png"
+          alt=""
+        />
       </C.BodyContainer>
-    </>
+    </C.EmployeeContainer>
   );
 };
 

@@ -44,7 +44,9 @@ const HeaderHolerite = ({
   return (
     <C.Container>
       <C.HeaderContainer>
-        <Image src={"/logo-humana.png"} width={260} height={60} alt="logo" />
+        <div className="logo-cont">
+          <Image src={"/employeee.png"} width={200} height={200} alt="logo" />
+        </div>
         <div className="divFilterMenuIcon">
           <p>Filtrar por período :</p>
           <input

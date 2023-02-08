@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Portal Humana</title>
+        <title>PayCheck</title>
         <meta name="Portal Humana" />
         <link rel="icon" href="globe.png" />
       </Head>

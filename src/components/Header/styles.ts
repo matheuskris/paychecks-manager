@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   box-shadow: 0 0 10px 2px;
+  width: 100%;
 `;
 
 export const HeaderContainer = styled.div`
@@ -13,6 +14,15 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .logo-cont {
+    height: 70px;
+    width: 290px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .divFilterMenuIcon {
     display: flex;

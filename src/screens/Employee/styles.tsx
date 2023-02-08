@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/styles.patterns";
 
+export const EmployeeContainer = styled.div`
+  width: 100%;
+  min-height: 80vh;
+  overflow-x: hidden;
+`;
+
 export const HContainer = styled.div`
   height: 80px;
   width: 100%;
@@ -10,6 +16,22 @@ export const HContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 8px 20px;
+  overflow: hidden;
+
+  .logo-cont {
+    height: 64px;
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: white;
+    img {
+      transform: translateX(-8px);
+    }
+  }
 
   h1 {
     color: white;
@@ -23,20 +45,20 @@ export const HContainer = styled.div`
 
 export const BodyContainer = styled.main`
   padding-top: 30px;
-  width: 100vw;
+  width: 100%;
   min-height: calc(100vh - 80px);
   background: linear-gradient(#111111, #224957);
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 40px;
-  overflow: hidden;
 
   .img {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
     height: auto;
-    width: 100%;
+    object-fit: contain;
   }
 
   .btnIcon {

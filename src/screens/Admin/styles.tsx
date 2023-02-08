@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const AdminContainer = styled.main`
   width: 100vw;
-  height: 40vh;
   min-height: 80vh;
+  overflow: hidden;
 `;
 
 export const TableContainer = styled.div`
